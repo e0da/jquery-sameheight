@@ -1,7 +1,7 @@
 jQuery.noConflict();
 (function($) {
   $.fn.sameHeight = function() {
-    var these = $(this);
+    var these = this;
     function setHeight() {
       var max = 0;
       these.height('auto').each(function() {
