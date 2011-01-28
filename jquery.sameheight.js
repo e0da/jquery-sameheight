@@ -1,4 +1,3 @@
-jQuery.noConflict();
 (function($) {
   $.fn.sameHeight = function() {
     var these = this;
