@@ -1,5 +1,5 @@
 /*
-* sameHeight jQuery plugin
+* jquery.sameheight.js v1.0.0
 * http://github.com/sidewaysmilk/jquery-sameheight
 *
 * Copyright 2011, Justin Force
