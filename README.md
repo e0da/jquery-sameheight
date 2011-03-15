@@ -24,7 +24,7 @@ And all elements of the format
     <div class="sameheight sh_another somethingElse"></div>
 
 will give you two sets that are automatically selected and maintained. To use
-it this way, you *must* include the class "sameheight" *AND* "sh_ID" where _ID_
+it this way, you __must__ include the class "sameheight" __AND__ "sh_ID" where _ID_
 is any identifier common to the elements that you want to set to the same
 height.
 
