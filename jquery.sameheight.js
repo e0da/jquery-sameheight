@@ -9,44 +9,38 @@
 * selection. Automatically adjust on $(window).resize()
 */
 
-/*
-* Set all selected elements to the same height
-*/
+// Set all selected elements to the same height
 jQuery.fn.sameHeight = function() {
-  var these = this;
+  var these = this; // store a reference to `this` for use inside inner function
+
   function setHeight() {
     var max = 0;
+
+    // Set height to auto first or it'll grow when resized, then find the max
+    // height by comparing all of the elements
     these.height('auto').each(function() {
       max = Math.max(max, jQuery(this).height());
-    }).height(max);
+    }).height(max); // and set the height of the selection
+
   };
-  jQuery(window).resize(setHeight);
-  setHeight();
-  return this;
+
+  // Set the resize listener, then trigger it to run setHeight the first time
+  jQuery(window).resize(setHeight).resize(); 
+  return this; // maintain chaining
 };
 
-/*
-* Set everything with class="sameheight sh_something" to the same height
-*
-* Groups by sh_whatever so that multiple sets can be easily created and
-* maintained independently, so
-* <div class="sameheight sh_top"></div> <div class="sameheight sh_top"></div>
-* <div class="sameheight sh_friends left"></div> <div class="sameheight sh_friends somethingElse"></div>
-* creates 2 sets of divs which will keep the same height, but will not affect each other.
-*/
+// Set everything with class="sameheight sh_something" to the same height
 jQuery.sameHeight = function() {
+
   jQuery('.sameheight').each(function() {
-    jThis = jQuery(this);
-    var selectors = [];
+    var selectors = []; // array of the "sh_X" class names
 
     // group by class="sh_whatever"
-    var match = jThis.attr('class').match(/(sh_\S+)/);
-    if (match && match[1]) {
-      if (selectors.indexOf(match[1]) < 0) {
-        selectors.push(match[1]);
-      }
-    }
+    var match = jQuery(this).attr('class').match(/(sh_\S+)/);
+    if (match && match[1] && selectors.indexOf(match[1]) < 0)
+      selectors.push(match[1]);
 
+    // Run $.fn.sameHeight on each selection
     jQuery.each(selectors, function(index, value) {
       jQuery('.' + value).sameHeight();
     });
