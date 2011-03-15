@@ -6,12 +6,10 @@
 * Licensed under the MIT license
 *
 * Set selected elements to the same height as the tallest element in the
-* selection. Automatically adjust when the page is resized.
+* selection. Automatically adjust on $(window).resize()
 */
 
 /*
-* $('.someClass').sameHeight()
-*
 * Set all selected elements to the same height
 */
 jQuery.fn.sameHeight = function() {
@@ -28,9 +26,7 @@ jQuery.fn.sameHeight = function() {
 };
 
 /*
-* for $.sameHeight()
-*
-* Applies to everything with class="sameheight sh_something"
+* Set everything with class="sameheight sh_something" to the same height
 *
 * Groups by sh_whatever so that multiple sets can be easily created and
 * maintained independently, so
