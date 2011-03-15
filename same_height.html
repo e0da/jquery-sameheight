@@ -1,0 +1,48 @@
+<!doctype html>
+<title>sameHeight test</title>
+<style>
+  div {
+    border:1px solid black;
+    margin:5px;
+    width:50px;
+    float:left;
+    border-radius:7px;
+    -webkit-border-radius:7px;
+    -moz-border-radius:7px;
+    padding:10px;
+  }
+  br {
+    clear:both;
+  }
+</style>
+<div class="blorp">
+  words
+</div>
+<div class="blorp">
+  more words
+</div>
+<br>
+<div class="sameheight sh_first">
+  other words
+</div>
+<div class="sameheight sh_first">
+  some other words
+</div>
+<br>
+<div class="sameheight sh_other">
+  another
+</div>
+<div class="sameheight sh_other">
+  and another
+</div>
+<div class="sameheight sh_other">
+  and just one more
+</div>
+<script src=http://code.jquery.com/jquery-1.5.1.min.js></script>
+<script src=jquery.sameheight.js></script>
+<script>
+  $(function() {
+    $('.blorp').sameHeight();
+    $.sameHeight();
+  });
+</script>

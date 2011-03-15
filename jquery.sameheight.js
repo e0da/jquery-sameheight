@@ -4,10 +4,15 @@
 *
 * Copyright 2011, Justin Force
 * Licensed under the MIT license
+*
+* Set selected elements to the same height as the tallest element in the
+* selection. Automatically adjust when the page is resized.
 */
 
 /*
-* for $('.someClass').sameHeight()
+* $('.someClass').sameHeight()
+*
+* Set all selected elements to the same height
 */
 jQuery.fn.sameHeight = function() {
   var these = this;
@@ -24,7 +29,14 @@ jQuery.fn.sameHeight = function() {
 
 /*
 * for $.sameHeight()
+*
 * Applies to everything with class="sameheight sh_something"
+*
+* Groups by sh_whatever so that multiple sets can be easily created and
+* maintained independently, so
+* <div class="sameheight sh_top"></div> <div class="sameheight sh_top"></div>
+* <div class="sameheight sh_friends left"></div> <div class="sameheight sh_friends somethingElse"></div>
+* creates 2 sets of divs which will keep the same height, but will not affect each other.
 */
 jQuery.sameHeight = function() {
   jQuery('.sameheight').each(function() {
