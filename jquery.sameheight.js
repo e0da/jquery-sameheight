@@ -13,8 +13,9 @@
 jQuery.fn.sameHeight = function() {
   var these = this; // store a reference to `this` for use inside inner function
 
-  function setHeight() {
-    var max = 0;
+  // Set the resize listener
+  jQuery(window).resize(function() {
+    var max = 0; // the height of the tallest element
 
     // Set height to auto first or it'll grow when resized, then find the max
     // height by comparing all of the elements
@@ -22,10 +23,8 @@ jQuery.fn.sameHeight = function() {
       max = Math.max(max, jQuery(this).height());
     }).height(max); // and set the height of the selection
 
-  };
+  }).resize(); // trigger resize to set height initially
 
-  // Set the resize listener, then trigger it to run setHeight the first time
-  jQuery(window).resize(setHeight).resize(); 
   return this; // maintain chaining
 };
 
