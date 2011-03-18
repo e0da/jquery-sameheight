@@ -30,7 +30,7 @@ And all elements of the format
 will give you two sets that are automatically selected and maintained. To use
 it this way, you __must__ include the class "sameheight" __AND__ "sh_ID" where _ID_
 is any identifier common to the elements that you want to set to the same
-height. It is quite save to add any other classes that you may need.
+height. It is quite safe to add any other classes that you may need.
 
 Demo
 ---------------------
