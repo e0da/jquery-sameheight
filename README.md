@@ -42,5 +42,5 @@ Copyright and License
 ---------------------
 
 Copyright © 2011, Justin Force
-Licensed under the MIT license
+Licensed under the 3-clause BSD License
 
