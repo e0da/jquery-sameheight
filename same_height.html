@@ -1,48 +1,87 @@
-<!doctype html>
-<title>sameHeight test</title>
+<!DOCTYPE html>
+<title>jquery.sameheight demo</title>
+
 <style>
-  div {
-    border:1px solid black;
-    margin:5px;
-    width:50px;
-    float:left;
-    border-radius:7px;
-    -webkit-border-radius:7px;
-    -moz-border-radius:7px;
-    padding:10px;
+  
+  div, p {
+    overflow: auto;
+    margin:2px;
+    padding:2px;
   }
-  br {
+
+  #nav, #content, #someParagraphs {
+    width:500px;
     clear:both;
   }
+
+  .sh_nav {
+    float:left;
+    width:30%;
+    border:1px solid #00c;
+    border-radius:7px;
+  }
+
+  .sh_content {
+    float:left;
+    width:45%;
+    border:1px solid #c00;
+    border-radius:10px;
+  }
+
+  #someParagraphs p {
+    float:left;
+    width: 20%;
+    border:1px solid #0c0;
+  }
 </style>
-<div class="blorp">
-  words
+
+<div id="nav">
+  <div class="sameheight sh_nav">Some content</div>
+
+  <div class="sameheight sh_nav">
+    Some more content
+    Some more content
+    Some more content
+    Some more content
+    Some more content
+    Some more content
+  </div>
+
+  <div class="sameheight sh_nav">Some similar content</div>
 </div>
-<div class="blorp">
-  more words
+
+<div id="content">
+  <div class="sameheight sh_content">
+    Other content
+    Other content
+    Other content
+    Other content
+  </div>
+
+  <div class="sameheight sh_content">Other content</div>
 </div>
-<br>
-<div class="sameheight sh_first">
-  other words
+
+<div id="someParagraphs">
+  <p>A paragraph
+  <p>
+    A much, much longer paragraph that goes on and on and on and on and on and
+    on and on and on and on and on and on and on and on and on and on and on...
+  <p>A short paragraph again
+  <p>
+    Some kind of unexpected medium-sized paragraph that doesn't go on so long
+    as the second one.
 </div>
-<div class="sameheight sh_first">
-  some other words
-</div>
-<br>
-<div class="sameheight sh_other">
-  another
-</div>
-<div class="sameheight sh_other">
-  and another
-</div>
-<div class="sameheight sh_other">
-  and just one more
-</div>
-<script src=http://code.jquery.com/jquery-1.5.1.min.js></script>
-<script src=jquery.sameheight.js></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="jquery.sameheight.js"></script>
 <script>
-  $(function() {
-    $('.blorp').sameHeight();
-    $.sameHeight();
-  });
+$(function() {
+
+  $.sameHeight();
+
+  // I'll set them to the same height, then turn them blue to show that jQuery chaining still works.
+  $('#someParagraphs p').sameHeight().css({color: 'blue'});
+
+});
 </script>
+
