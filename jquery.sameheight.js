@@ -1,6 +1,6 @@
 /*
 * jquery.sameheight.js v1.1
-* http://github.com/sidewaysmilk/jquery-sameheight
+* http://github.com/justinforce/jquery-sameheight
 *
 * Copyright 2011, Justin Force
 * Licensed under the MIT license
